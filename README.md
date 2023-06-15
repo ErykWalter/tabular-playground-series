@@ -14,11 +14,11 @@ Before performing clustering some normalization was performed.
 A test for low variance features was performed, however nothing was filtered out.
 Next a test for features correlation was done, but it was also futile as the correlation between the features was very low:
 
-![corr](correlation.png)
+![correlation](https://github.com/ErykWalter/tabular-playground-series/assets/107052397/a5288b0d-b980-418e-8836-20f4443c4583)
 
 We wanted to performed UMAP on the dataset as it preserves local distances. For that the data was standardized.
 
-![umap](umap.png)
+![umap](https://github.com/ErykWalter/tabular-playground-series/assets/107052397/8e82ec53-78cc-45fe-8784-83b70184ef64)
 
 For DBSCAN however the dataset was normalized, to make looking for epsilon easier.
 
@@ -32,11 +32,11 @@ The quality of clustering can be evaluated using Silhouette score and also Davie
 
 Silhouette score:
 
-![sil](silhouette.png)
+![silhouette](https://github.com/ErykWalter/tabular-playground-series/assets/107052397/5d1d5f0d-3840-4aca-9265-8f40c78c2ae5)
 
 Davies-Bouldin score:
 
-![db](davies-bouldin.png)
+![davies-bouldin](https://github.com/ErykWalter/tabular-playground-series/assets/107052397/5bdd26e1-187c-4cee-b210-311f3027afa4)
 
 Some notable k-sizes are 3, 4 and 8, but we propose 4 as the best k.
 
@@ -46,7 +46,7 @@ DBSCAN was tested next. It is a density based clustering, with two parameters: $
 
 First optimal range for $\epsilon$ was checked using NearestNeighbours algorithm for the normalized data:
 
-![elbow](elbow.png)
+![elbow](https://github.com/ErykWalter/tabular-playground-series/assets/107052397/0efb02f2-38af-4b34-8a47-fe4fde2dd05c)
 
 Here we are interested in the second elbow, concluding that the optimal $\epsilon$ is somewhere between 0.47 up to 0.6. We checked the optimal value similarly to the k for k-means, concluding at 0.6.
 
@@ -54,5 +54,6 @@ Then the optimal $min_{sample}$ was concluded to be 140.
 
 Unfortunately DBSCAN does not seem to be a good method for this dataset:
 
-![dbscan](dbscan.png)
+![dbscan](https://github.com/ErykWalter/tabular-playground-series/assets/107052397/5edba5c6-c071-4f61-a4ce-e6ce815f0d00)
+
 
